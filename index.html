@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokemon Battle</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="./js/script.js" defer></script>
+</head>
+
+<body>
+    <h1>Pokemon Battle</h1>
+
+    <div id="elements-container">
+        <img src="images/pokemon-rock-paper-scissors.jpeg" alt="elements rock paper scissors">
+        <img src="images/pokemon_1stgen.webp" alt="elements descriptions">
+    </div>
+    <div id="start-container">
+        <div id="instructions">
+            <h3>Instructions: two player game where each player will choose an element from above.</h3>
+            <h4>Stronger element wins</h4>
+        </div>
+        <button onclick="game.start()">START</button>
+    </div>
+
+    <div class="hide" id="game-container">
+        <div id="display-container">
+            <div class="border">
+                <h4 id='p1-name'>Player 1</h4>
+                <img class="img-size hide" id="player-1-element" src="images/pokeball-removebg-preview.png"
+                    alt="Player 1 pokeball">
+            </div>
+            <div class="border">
+                <h4 id="p2-name">Player 2</h4>
+                <img class="img-size hide" id="player-2-element" src="images/pokeball-removebg-preview.png"
+                    alt="Player 2 pokeball">
+            </div>
+        </div>
+
+        <p id="battle-prompt">Player 1: Enter name and element</p>
+
+        <div id="create-container">
+            <form>
+                <div>
+                    <!-- Everytime you have an input, create a label for it -->
+                    <label for="firstname">First Name:</label>
+                    <input type="text" id="firstname">
+                </div>
+                <div>
+                    <label for="chosen-element">Element:</label>
+                    <input type="text" id="chosen-element">
+                </div>
+                <div id="submit-button">
+                    <button onclick="game.checkElement(event)">Submit</button>
+                    <!-- Have to pass the full word "event" ONLY in HTML. Not react or anything -->
+                </div>
+            </form>
+        </div>
+
+        <img class="img-size hide" id="battle-button" src="https://i.gifer.com/QhVL.gif" onclick="game.battle()"
+            alt="Pokeball Start Battle Button">
+    </div>
+
+
+</body>
+
+</html>
